@@ -2,9 +2,24 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
 import swal from "sweetalert";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../firebase/FireBase";
+import { FcGoogle } from 'react-icons/fc';
 
+const Login = () => {
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
 
-const Register = () => {
+  const handleGoogleSingIn = () =>{
+    signInWithPopup(auth,provider)
+    .then(result =>{
+      console.log(result.user);
+      swal("Good job!", "Login Successfully! With Google ", "success");
+    })
+    .catch(error => {
+      console.error(error);
+    })
+  }
 
   const {signIn} = useContext(AuthContext)
 
@@ -59,11 +74,14 @@ const Register = () => {
               <button className="btn btn-primary">Login</button> 
             </div>
             <p className="text-center pb-4" >Do not have an account <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p> 
+            <button onClick={handleGoogleSingIn} className="flex py- justify-center items-center"> <FcGoogle className="text-4xl "></FcGoogle> </button>
+
           </form>
         </div>
       </div>
+
     </div>
   );
 };
 
-export default Register;
+export default Login;
