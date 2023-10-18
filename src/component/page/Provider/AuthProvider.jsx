@@ -20,7 +20,7 @@ const [loading, setLoading] = useState(true)
         const unSubscribe =  onAuthStateChanged(auth,currentUser =>{
             console.log('user in the state change ', currentUser);
             setUser(currentUser);
-            // setLoading(false)
+            setLoading(false)
         })
         return () =>{
             unSubscribe()
@@ -29,13 +29,19 @@ const [loading, setLoading] = useState(true)
 
 
     const signIn = (email, password) =>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
 
     const logOut = () =>{
+        setLoading(true)
         return signOut(auth);
     }
 
+
+    if (loading) {
+        return <div className="flex justify-center items-center mt-80"><span className="loading loading-spinner loading-lg"></span></div>
+    }
 
     const authInfo = {
         createUser,
