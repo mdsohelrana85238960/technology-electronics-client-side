@@ -4,6 +4,8 @@ import Login from "../page/Login";
 import Home from "../page/Home";
 import Register from "../page/Register";
 import ErrorPage from "../page/ErrorPage";
+import PrivateRouter from "./PrivateRouter";
+import Product from "../Product/Product";
 // import Brand from "../page/Brand";
 
 const router = createBrowserRouter([
@@ -26,11 +28,11 @@ const router = createBrowserRouter([
             path: '/register',
             element:<Register></Register>
         },
-        // {
-        //     path: '/brand',
-        //     element:<Brand></Brand>,
-        //     loader: () => fetch('/brand.json')
-        // },
+        {
+            path: '/product',
+            element:<PrivateRouter> <Product></Product> </PrivateRouter>
+           
+        },
       ]
     },
   ]);

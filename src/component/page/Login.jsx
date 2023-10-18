@@ -1,14 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../firebase/FireBase";
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from "../Provider/AuthProvider";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
+  const [ showPassword, setShowPassword] = useState(false)
 
   const handleGoogleSingIn = () =>{
     signInWithPopup(auth,provider)
@@ -62,13 +65,12 @@ const Login = () => {
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                className="input input-bordered"
-                required
-              />
+              <input type= {showPassword ? "text":"password"}placeholder="Password" name="password" className="input input-bordered" required />
+          <span className="relative bottom-8  left-[300px]" onClick={()=> setShowPassword(!showPassword)}>
+            {
+              showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
+            }
+          </span>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button> 
