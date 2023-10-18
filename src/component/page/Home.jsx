@@ -29,10 +29,10 @@ const Home = () => {
 
      <div className="   mt-20 grid gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
      {
-        brands.map(brand => <div key={brand.id}> <div className="card card-compact mx-auto  w-96 bg-base-100 shadow-xl">
+        brands.map(brand => <div key={brand.id}> <div  className="card card-compact mx-auto  w-96 bg-base-100 shadow-xl">
         <figure><img className="h-60 " src= {brand.img} alt="Shoes" /></figure>
         
-          <h2 className="card-title p-4 text-purple-600">{brand.name}</h2>
+          <h2 className="card-title text-2xl p-4 text-purple-600">{brand.name}</h2>
           
       </div> </div>)
       }

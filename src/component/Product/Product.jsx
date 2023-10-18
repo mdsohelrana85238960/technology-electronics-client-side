@@ -1,11 +1,28 @@
 
 
 const Product = () => {
+
+const handleAddProduct = e =>{
+    e.preventDefault()
+    const form = e.target
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const brand = form.brand.value;
+    const technology = form.technology.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+
+    const product = {name, photo, brand,technology,price,rating}
+    console.log(product);
+}
+
+
+
     return (
         
         <div className="my-20">
             <h1 className="text-center text-5xl font-bold underline "> Add Product </h1>
-           <form>
+           <form onSubmit={handleAddProduct}>
             <div className="card-body grid md:grid-cols-2 gap-8">
             <div className="form-control">
           <label className="label">
