@@ -3,15 +3,20 @@ import Root from "../root/root";
 import Login from "../page/Login";
 import Home from "../page/Home";
 import Register from "../page/Register";
+import ErrorPage from "../page/ErrorPage";
+// import Brand from "../page/Brand";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path: '/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader: () => fetch('brand.json')
+            
         },
         {
             path: '/login',
@@ -22,8 +27,9 @@ const router = createBrowserRouter([
             element:<Register></Register>
         },
         // {
-        //     path: '/login',
-        //     element:<Login></Login>
+        //     path: '/brand',
+        //     element:<Brand></Brand>,
+        //     loader: () => fetch('/brand.json')
         // },
       ]
     },

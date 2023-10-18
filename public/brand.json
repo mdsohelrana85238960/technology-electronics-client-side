@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "name": "Apple",
+      "img": "https://www.thebrandingjournal.com/wp-content/uploads/2016/05/apple_new_store_visual_identity_campaign_the_branding_journal_5.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Hp",
+      "img": "https://cdn.mos.cms.futurecdn.net/bc4b8e1f2cec630bfa28e9bf740b4db0.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Sony",
+      "img": "https://1000logos.net/wp-content/uploads/2021/09/Color-Sony-Logo.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Samsung",
+      "img": "https://www.smartprix.com/bytes/wp-content/uploads/2023/01/Samsung.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Oppo",
+      "img": "https://1734811051.rsc.cdn77.org/data/images/full/407816/spain-telecom-mobile-world-congress-mwc.jpg?w=600?w=430"
+    },
+    {
+      "id": 6,
+      "name": "Vivo",
+      "img": "https://s01.sgp1.digitaloceanspaces.com/large/891028-fyclcvzndo-1534673185.jpg"
+    }
+  ]
+  

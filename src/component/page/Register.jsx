@@ -2,7 +2,8 @@ import { updateProfile } from "firebase/auth";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
-import { AuthContext } from "./Provider/AuthProvider";
+import { AuthContext } from "../Provider/AuthProvider";
+
 
 
 

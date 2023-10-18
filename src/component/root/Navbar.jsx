@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { AuthContext } from "../page/Provider/AuthProvider";
-import { signOut } from "firebase/auth";
 import swal from "sweetalert";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Navbar = () => {
@@ -16,7 +15,7 @@ const Navbar = () => {
 
     const navLinks = <>
         <li><NavLink className=' text-lg' to='/'> Home </NavLink></li>
-        <li><NavLink  className=' text-lg' to='/about'> Add Product </NavLink></li>
+        <li><NavLink  className=' text-lg' to='/dfg'> Add Product </NavLink></li>
         <li><NavLink className=' text-lg' to='/contact'> My Cart </NavLink></li>
         <li><NavLink className=' text-lg' to='/login'> Login </NavLink></li>
     </>

@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "./Provider/AuthProvider";
 import swal from "sweetalert";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../firebase/FireBase";
 import { FcGoogle } from 'react-icons/fc';
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
   const auth = getAuth(app);
