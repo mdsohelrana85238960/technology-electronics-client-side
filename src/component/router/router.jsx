@@ -5,8 +5,9 @@ import Home from "../page/Home";
 import Register from "../page/Register";
 import ErrorPage from "../page/ErrorPage";
 import PrivateRouter from "./PrivateRouter";
-import Product from "../Product/Product";
-// import Brand from "../page/Brand";
+import BrandProduct from "../page/BrandProduct";
+import AddProduct from "../Product/AddProduct";
+
 
 const router = createBrowserRouter([
     {
@@ -29,9 +30,14 @@ const router = createBrowserRouter([
             element:<Register></Register>
         },
         {
-            path: '/product',
-            element:<PrivateRouter> <Product></Product> </PrivateRouter>
-           
+            path: '/addProduct',
+            element:<PrivateRouter> <AddProduct></AddProduct> </PrivateRouter>
+        },
+        {
+            path: '/products/:brand',
+            element:<PrivateRouter><BrandProduct></BrandProduct></PrivateRouter>,
+            // loader: ({params}) => fetch(`http://localhost:5000/products/${params.brand}`)
+            loader: () => fetch(`http://localhost:5000/products`)
         },
       ]
     },

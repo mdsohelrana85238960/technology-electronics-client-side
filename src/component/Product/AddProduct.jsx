@@ -1,6 +1,7 @@
 
 
-const Product = () => {
+
+const AddProduct = () => {
 
 const handleAddProduct = e =>{
     e.preventDefault()
@@ -11,9 +12,22 @@ const handleAddProduct = e =>{
     const technology = form.technology.value;
     const price = form.price.value;
     const rating = form.rating.value;
+    const description = form.description.value;
 
-    const product = {name, photo, brand,technology,price,rating}
+    const product = {name, photo, brand,technology,price,rating,description}
     console.log(product);
+
+    fetch('http://localhost:5000/products',{
+        method:'POST',
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body:JSON.stringify(product)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    })
 }
 
 
@@ -59,12 +73,12 @@ const handleAddProduct = e =>{
                 <span className="label-text">Technology</span>
               </label>
               <input
-                type="text"
-                name="technology" 
-                placeholder="Technology"
-                className="input input-bordered"
-                required
-              />
+              type="text"
+              name="technology"
+              placeholder="Technology"
+              className="input input-bordered"
+              required
+            />
             </div>
             <div className="form-control">
               <label className="label">
@@ -78,6 +92,7 @@ const handleAddProduct = e =>{
                 required
               />
             </div>
+         
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Rating</span>
@@ -90,12 +105,26 @@ const handleAddProduct = e =>{
                 
               />
             </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Description</span>
+              </label>
+              <input
+                type="text"
+                name="description" 
+                placeholder="Description"
+                className="input input-bordered"
+                
+              />
+            
                 </div>
-                <button className="btn btn-primary  flex justify-center w-96 mx-auto"> Add product </button>
+                </div>
+  
+                <button className=" my-12 btn btn-primary  flex justify-center w-96 mx-auto"> Add product </button>
           </form>
           </div>
         
     );
 };
 
-export default Product;
+export default AddProduct;
