@@ -32,7 +32,7 @@ const Home = () => {
         brands.map(brand => <div key={brand.id}> <Link to= {`/products/${brand.brand}`} > <div  className="card card-compact mx-auto  w-96 bg-base-100 shadow-xl">
         <figure><img className="h-60 " src= {brand.img} alt="Shoes" /></figure>
         
-          <h2 className="card-title text-2xl p-4 text-purple-600">{brand.name}</h2>
+          <h2 className="card-title text-2xl p-4 text-purple-600">{brand.brand}</h2>
           
       </div></Link> </div>)
       }

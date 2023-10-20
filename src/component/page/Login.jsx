@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../firebase/FireBase";
@@ -12,6 +12,10 @@ const Login = () => {
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const [ showPassword, setShowPassword] = useState(false)
+  const location = useLocation();
+  const navigate = useNavigate();
+
+
 
   const handleGoogleSingIn = () =>{
     signInWithPopup(auth,provider)
@@ -36,9 +40,13 @@ const Login = () => {
     signIn(email, password)
     .then(result => {
       console.log(result.user);
+      navigate(location.state ? location.state : '/')
       swal("Good job!", "Login Successfully!", "success");
     })
-    .catch(error => console.error(error))
+    .catch(error =>{
+      console.error(error);
+      swal("Incorrect email and password ", "Please enter the correct email and password", "error");
+  })
   };
 
   return (

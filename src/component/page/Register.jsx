@@ -24,6 +24,14 @@ const Register = () => {
     const photo = e.target.photo.value;
 
     console.log(name, email, password, photo );
+    if (password.length < 6 ) {
+      swal("Password should be at least 6 characters");
+      return ;
+    }
+    else if (!/^(?=.*[A-Z])(?=.*[!@#]).{6,}$/.test(password)){
+      swal("Password should be at upper case and one special characters");
+      return ;
+    }
     
     createUser(email,password)
         .then(result =>{

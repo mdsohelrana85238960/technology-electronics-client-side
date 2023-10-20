@@ -39,15 +39,14 @@ const [loading, setLoading] = useState(true)
     }
 
 
-    if (loading) {
-        return <div className="flex justify-center items-center mt-80"><span className="loading loading-spinner loading-lg"></span></div>
-    }
+   
 
     const authInfo = {
         createUser,
         signIn,
          logOut,
-         user
+         user,
+         loading
         }
 
     return (

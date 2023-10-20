@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import swal from "sweetalert";
 
 
 
@@ -35,7 +36,7 @@ const handleUpdateProduct = e =>{
     .then(data => {
         console.log(data);
         if (data.modifiedCount > 0) {
-            alert('update')
+          swal("Product update successfully");
         }
     })
 }

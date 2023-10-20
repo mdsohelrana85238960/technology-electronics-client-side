@@ -16,7 +16,7 @@ const Navbar = () => {
     const navLinks = <>
         <li><NavLink className=' text-lg' to='/'> Home </NavLink></li>
         <li><NavLink  className=' text-lg' to='/addProduct'> Add Product </NavLink></li>
-        <li><NavLink className=' text-lg' to='/contact'> My Cart </NavLink></li>
+        <li><NavLink className=' text-lg' to='/cart'> My Cart </NavLink></li>
         <li><NavLink className=' text-lg' to='/login'> Login </NavLink></li>
     </>
 
@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="navbar-end">
         {
           user ? <div className="flex gap-2 items-center justify-center ">  <div> <img className="w-10 h-10 rounded-full mx-auto " src={user.photoURL
-          } alt="" /> <p className=" text-blue-800 font-bold">{user.displayName
+          } alt="" /> <p className="  text-orange-500 font-bold">{user.displayName
           } </p> </div>   <button onClick={handleSingOut} className="btn">Sing Out</button> </div>
           :
           <Link to= '/login'>

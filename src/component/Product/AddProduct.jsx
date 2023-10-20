@@ -1,3 +1,4 @@
+import swal from "sweetalert";
 
 
 
@@ -27,6 +28,7 @@ const handleAddProduct = e =>{
     .then(res => res.json())
     .then(data => {
         console.log(data);
+        swal("Product add successfully");
     })
 }
 
