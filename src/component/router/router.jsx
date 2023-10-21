@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         {
             path: '/',
             element:<Home></Home>,
-            loader: () => fetch('brand.json')
+            loader: () => fetch('/brand.json')
             
         },
         {
@@ -34,8 +34,8 @@ const router = createBrowserRouter([
         },
         {
             path: '/cart',
-            element:<Cart></Cart>,
-            loader: () => fetch('http://localhost:5000/products')
+            element:<PrivateRouter> <Cart></Cart> </PrivateRouter>,
+            loader: () => fetch('https://technology-electronics-server-2znvhdtbk-my-team-88e02784.vercel.app/carts')
         },
         {
             path: '/addProduct',
@@ -44,20 +44,20 @@ const router = createBrowserRouter([
         {
             path: '/updateProduct/:id',
             element:<PrivateRouter><UpdateProduct></UpdateProduct></PrivateRouter>,
-            loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+            loader: ({params}) => fetch(`https://technology-electronics-server-2znvhdtbk-my-team-88e02784.vercel.app/products/${params.id}`)
     
         },
         {
             path: '/details/:id',
             element:<PrivateRouter><Details></Details></PrivateRouter>,
-            loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+            loader: ({params}) => fetch(`https://technology-electronics-server-2znvhdtbk-my-team-88e02784.vercel.app/products/${params.id}`)
     
         },
        
         {
             path: '/products/:brand',
-            element:<BrandProduct></BrandProduct>,
-            loader: () => fetch(`http://localhost:5000/products`)
+            element:<PrivateRouter><BrandProduct></BrandProduct></PrivateRouter>,
+            loader: () => fetch(`https://technology-electronics-server-2znvhdtbk-my-team-88e02784.vercel.app/products`)
         },
       ]
     },

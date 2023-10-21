@@ -5,29 +5,33 @@ import swal from "sweetalert";
 
 const Cart = () => {
     const allProduct = useLoaderData();
+    console.log(allProduct);
     const [products , setProducts] = useState(allProduct)
 
-    const handleDelete = _id =>{
+    const handleDelete = id =>{
      
+      console.log(id);
 
+      fetch( `https://technology-electronics-server-brovb1i90-my-team-88e02784.vercel.app/carts/${id}`,{
+        method:"DELETE",
 
-      fetch(`http://localhost:5000/products/${_id}`,{
-        method:'DELETE',
-        headers:{
-            "Content-Type": "application/json",
-        },
-        
-    })
-    .then(res => res.json())
-    .then(data => {
-       
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      
         if (data.deletedCount > 0) {
-          swal("Product delete successfully");
-
-          const filterdata = products.filter(item => item._id !==_id )
-          setProducts(filterdata)
+          swal('Products delete successfully' )
+          const remainingProducts = products.filter(product => product._id !==id);
+          setProducts(remainingProducts)
         }
-    })
+
+
+
+      })
+
+
+     
     }
 
   
@@ -39,7 +43,7 @@ const Cart = () => {
             {
                 products.map(product => <div key={product._id} >
                    <div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img className="w-56 h-44" src= {product.photo} alt="Shoes" /></figure>
+  <figure><img className="w-56 h-56" src= {product.photo} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
       {product.name}

@@ -15,12 +15,13 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-
+const from = location.state || '/'
 
   const handleGoogleSingIn = () =>{
     signInWithPopup(auth,provider)
     .then(result =>{
       console.log(result.user);
+      navigate(from,{replace:true})
       swal("Good job!", "Login Successfully! With Google ", "success");
     })
     .catch(error => {
@@ -40,7 +41,8 @@ const Login = () => {
     signIn(email, password)
     .then(result => {
       console.log(result.user);
-      navigate(location.state ? location.state : '/')
+      navigate(from,{replace:true})
+
       swal("Good job!", "Login Successfully!", "success");
     })
     .catch(error =>{

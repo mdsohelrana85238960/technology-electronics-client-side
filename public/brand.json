@@ -1,14 +1,14 @@
 [
-    {
-      "id": 1,
-      "brand": "Apple",
-      "img": "https://www.thebrandingjournal.com/wp-content/uploads/2016/05/apple_new_store_visual_identity_campaign_the_branding_journal_5.jpg"
-    },
-    {
-      "id": 2,
-      "brand": "Hp",
-      "img": "https://cdn.mos.cms.futurecdn.net/bc4b8e1f2cec630bfa28e9bf740b4db0.jpg"
-    },
+  {
+    "id": 1,
+    "brand": "Vivo",
+    "img": "https://s01.sgp1.digitaloceanspaces.com/large/891028-fyclcvzndo-1534673185.jpg"
+  },
+  {
+    "id": 2,
+    "brand": "Oppo",
+    "img": "https://1734811051.rsc.cdn77.org/data/images/full/407816/spain-telecom-mobile-world-congress-mwc.jpg?w=600?w=430"
+  },
     {
       "id": 3,
       "brand": "Sony",
@@ -21,13 +21,15 @@
     },
     {
       "id": 5,
-      "brand": "Oppo",
-      "img": "https://1734811051.rsc.cdn77.org/data/images/full/407816/spain-telecom-mobile-world-congress-mwc.jpg?w=600?w=430"
+      "brand": "Apple",
+      "img": "https://www.thebrandingjournal.com/wp-content/uploads/2016/05/apple_new_store_visual_identity_campaign_the_branding_journal_5.jpg"
     },
-    {
+     {
       "id": 6,
-      "brand": "Vivo",
-      "img": "https://s01.sgp1.digitaloceanspaces.com/large/891028-fyclcvzndo-1534673185.jpg"
+      "brand": "Hp",
+      "img": "https://cdn.mos.cms.futurecdn.net/bc4b8e1f2cec630bfa28e9bf740b4db0.jpg"
     }
+   
+  
   ]
   

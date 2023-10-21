@@ -4,12 +4,10 @@ import Header from "./Header";
 
 const Home = () => {
     const brands = useLoaderData();
-   
-   
     return (
-        <div>
+        <div >
             <Header></Header>
-        <section className=" gap-8 mt-16 lg:flex space-y-6 ">
+        <section  className=" gap-8 mt-16 lg:flex space-y-6 ">
             <div className="md:flex gap-4">
                 <img className="w-56 mx-auto h-56" src="https://i.insider.com/62e2ce23536a230019121a76?width=1136&format=jpeg" alt="" />
                 <div>
@@ -27,12 +25,12 @@ const Home = () => {
             
         </section>
 
-     <div className="   mt-20 grid gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+     <div  className="   mt-20 grid gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
      {
         brands.map(brand => <div key={brand.id}> <Link to= {`/products/${brand.brand}`} > <div  className="card card-compact mx-auto  w-96 bg-base-100 shadow-xl">
         <figure><img className="h-60 " src= {brand.img} alt="Shoes" /></figure>
         
-          <h2 className="card-title text-2xl p-4 text-purple-600">{brand.brand}</h2>
+          <h2 className="card-title text-2xl p-4 text-orange-600">{brand.brand}</h2>
           
       </div></Link> </div>)
       }

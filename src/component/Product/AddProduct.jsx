@@ -10,15 +10,15 @@ const handleAddProduct = e =>{
     const name = form.name.value;
     const photo = form.photo.value;
     const brand = form.brand.value;
-    const technology = form.technology.value;
+    const type = form.type.value;
     const price = form.price.value;
     const rating = form.rating.value;
     const description = form.description.value;
 
-    const product = {name, photo, brand,technology,price,rating,description}
+    const product = {name, photo, brand,type,price,rating,description}
     console.log(product);
 
-    fetch('http://localhost:5000/products',{
+    fetch('https://technology-electronics-server-2znvhdtbk-my-team-88e02784.vercel.app/products',{
         method:'POST',
         headers:{
             "Content-Type": "application/json",
@@ -72,12 +72,12 @@ const handleAddProduct = e =>{
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Technology</span>
+                <span className="label-text">Type</span>
               </label>
               <input
               type="text"
-              name="technology"
-              placeholder="Technology"
+              name="type"
+              placeholder="Type"
               className="input input-bordered"
               required
             />
@@ -122,7 +122,7 @@ const handleAddProduct = e =>{
                 </div>
                 </div>
   
-                <button className=" my-12 btn btn-primary  flex justify-center w-96 mx-auto"> Add product </button>
+                <button className=" my-12 btn text-white bg-orange-500  flex justify-center w-96 mx-auto"> Add Product </button>
           </form>
           </div>
         

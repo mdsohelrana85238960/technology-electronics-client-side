@@ -17,15 +17,16 @@ const handleUpdateProduct = e =>{
     const name = form.name.value;
     const photo = form.photo.value;
     const brand = form.brand.value;
-    const technology = form.technology.value;
+    const type = form.type.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    const description = form.description.value;
+    // const description = form.description.value;
+    
 
-    const product = {name, photo, brand,technology,price,rating,description}
+    const product = {name, photo, brand,type,price,rating}
     console.log(product);
 
-    fetch(`http://localhost:5000/products/${id}`,{
+    fetch(`https://technology-electronics-server-2znvhdtbk-my-team-88e02784.vercel.app/products/${id}`,{
         method:'PUT',
         headers:{
             "Content-Type": "application/json",
@@ -46,14 +47,14 @@ const handleUpdateProduct = e =>{
     return (
         
         <div className="my-20">
-            <h1 className="text-center text-5xl font-bold underline "> Add Product </h1>
+            <h1 className="text-center text-5xl font-bold underline "> Update  Product </h1>
            <form onSubmit={handleUpdateProduct}>
             <div className="card-body grid md:grid-cols-2 gap-8">
             <div className="form-control">
           <label className="label">
             <span className="label-text">Photo URL</span>
           </label>
-          <input type="text" placeholder="Photo URL"   name="photo"   className="input input-bordered" required />
+          <input type="text" placeholder="Photo URL"   name="photo" defaultValue={data.photo}  className="input input-bordered" required />
         </div>
             <div className="form-control">
               <label className="label">
@@ -62,7 +63,7 @@ const handleUpdateProduct = e =>{
               <input
                 type="text"
                 name="name" 
-                // defaultValue={name}
+                defaultValue={data.name}
                 placeholder="Name"
                 className="input input-bordered"
                 required
@@ -75,7 +76,7 @@ const handleUpdateProduct = e =>{
               <input
                 type="text"
                 name="brand"
-                // defaultValue={brand}
+                defaultValue={data.brand}
                 placeholder="Brand Name"
                 className="input input-bordered"
                 required
@@ -83,13 +84,13 @@ const handleUpdateProduct = e =>{
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Technology</span>
+                <span className="label-text">Type</span>
               </label>
               <input
               type="text"
-              name="technology"
-            //   defaultValue={technology}
-              placeholder="Technology"
+              name="type"
+              defaultValue={data.type}
+              placeholder="Type"
               className="input input-bordered"
               required
             />
@@ -101,7 +102,7 @@ const handleUpdateProduct = e =>{
               <input
                 type="text"
                 name="price"
-                // defaultValue={price}
+                defaultValue={data.price}
                 placeholder="Price"
                 className="input input-bordered"
                 required
@@ -115,29 +116,30 @@ const handleUpdateProduct = e =>{
               <input
                 type="number"
                 name="rating" 
-                // defaultValue={rating}
+                defaultValue={data.rating}
                 placeholder="Rating"
                 className="input input-bordered"
                 
               />
             </div>
-            <div className="form-control">
+            {/* <div className="form-control">
               <label className="label">
                 <span className="label-text">Description</span>
               </label>
               <input
                 type="text"
                 name="description" 
-                // defaultValue={description}
+                defaultValue={data.description}
                 placeholder="Description"
                 className="input input-bordered"
                 
               />
             
-                </div>
+                </div> */}
+            
                 </div>
   
-                <button className=" my-12 btn btn-primary  flex justify-center w-96 mx-auto"> Update product </button>
+                <button className=" my-12 btn text-white bg-orange-500 flex justify-center w-96 mx-auto"> Update product </button>
           </form>
           </div>
         
