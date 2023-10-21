@@ -6,13 +6,14 @@
 4.set privateRoute
 5.google and email Authentication
 6.create add product and set input 
-7.product set in database
-8.create and set update and input
-9.create new page and set in all cart
-10. footer page set in home page
+7.if add to cart set this system
+8.product set in database
+9.create and set update and input
+10.create new page and set in all cart
+11. footer page set in home page
  -->
 
-
+live link: https://technology-and-electroni-b8171.web.app
 
 
  <!-- server side commit -->
@@ -23,6 +24,7 @@
  3.set update system
  4.set delete button 
  5.receive all cart and set add to cart 
+ 6.add to cart if set user set this product
   -->
 
 
