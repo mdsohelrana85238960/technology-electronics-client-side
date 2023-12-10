@@ -25,13 +25,7 @@ const Cart = () => {
           const remainingProducts = products.filter(product => product._id !==id);
           setProducts(remainingProducts)
         }
-
-
-
       })
-
-
-     
     }
 
   

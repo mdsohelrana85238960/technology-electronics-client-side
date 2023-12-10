@@ -53,20 +53,9 @@ setSelected(getData)
 
 
 
-
-
-
-
-
-
-
-
           <div className="grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {
             selected.map(product => <div key={product._id}> 
-
-                  
-             
 
             <div className="card  mx-auto h-[700px]  w-96  bg-base-100 shadow-xl">
   <figure><img className="h-[450px]" src= {product.photo} alt="Shoes" /></figure>
